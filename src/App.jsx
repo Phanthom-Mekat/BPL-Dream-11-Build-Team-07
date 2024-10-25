@@ -2,12 +2,23 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Header/Navbar'
 import Players from './components/players/Players'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
 
   const [coins, setCoin] = useState(0)
   const addCoin = () => {
     setCoin(coins + 600000)
+    toast.success('600000 coins added', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
   }
 
   const choosePlayer = (price) => {
@@ -20,18 +31,68 @@ function App() {
 
   const chosenPlayerHandler = (player) => {
     if (playerChosen.length >= 6) {
-      alert("You can only choose up to 6 players!");
+      toast.warn('Only 6 players can be selected', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+
+        });
+      
     } else if (playerChosen.includes(player)) {
-      alert(`${player.name} is already chosen!`);
+      toast.error(`${player.name} is already chosen!`, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+
+        });
     } else if (coins < player.biddingPrice) {
-      alert("Not enough coins to choose this player!");
+      toast.error("Not enough coins", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     } else {
       setPlayerChosen([...playerChosen, player]);
+      toast.success(`${player.name} has been selected`, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     }
   };
-  // there is a delete button in the playerchoosen component if the button clicked it will be deleted make a handle for it
+
   const deletePlayer = (player) => {
     setPlayerChosen(playerChosen.filter((p) => p.playerId !== player.playerId));
+    toast.error(`${player.name} has been removed`, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
   };
   
 
@@ -51,6 +112,7 @@ function App() {
     <>
         <Navbar coins={coins} addCoin={addCoin} />
         <Players playerChosen={playerChosen} deletePlayer={deletePlayer} chosenPlayerHandler={chosenPlayerHandler} choosePlayer={choosePlayer} handleIsActive={handleIsActive} isActive={isActive}/>
+        <ToastContainer />
     </>
   )
 }

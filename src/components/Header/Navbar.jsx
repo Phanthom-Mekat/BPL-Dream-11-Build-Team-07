@@ -4,6 +4,7 @@ import banner from '../../assets/banner-main.png'
 import hero from '../../assets/bg-shadow.png'
 import PropTypes from 'prop-types';
 
+
 const Navbar = ({coins, addCoin}) => {
     
     return (
@@ -43,6 +44,7 @@ const Navbar = ({coins, addCoin}) => {
                 <span className='border border-[#E7FE29] p-1 rounded-xl '>
 
                 <button onClick={addCoin} className="btn bg-[#E7FE29]">Claim Free Credit</button>
+                
                 </span>
               </div>
             </div>
