@@ -1,13 +1,14 @@
 import './App.css'
+import Navbar from './components/Header/Navbar'
 
 function App() {
 
 
   return (
     <>
-
-      <h1 className='text-3xl'>Bpl Dream team 11</h1>
-      
+      <header className='w-11/12 mx-auto'>
+        <Navbar/>
+      </header>
     </>
   )
 }
