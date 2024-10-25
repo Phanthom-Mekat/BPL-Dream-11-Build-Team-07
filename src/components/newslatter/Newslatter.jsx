@@ -2,7 +2,7 @@ import './newslatter.css'
 const Newslatter = () => {
     return (
         <div>
-            <section className="bg-base-200 text-base-content p-10 mt-20 w-11/12 mx-auto rounded-lg custom-gradient">
+            <section className="bg-base-200 text-base-content p-16 mt-20 w-11/12 mx-auto rounded-lg custom-gradient relative -bottom-14 z-10 ">
                 <form className="flex flex-col items-center text-center">
                     <h6 className="text-3xl font-bold">Subscribe to our Newsletter</h6>
                     <p className="py-2 text-gray-500">Get the latest updates and news right in your inbox!</p>

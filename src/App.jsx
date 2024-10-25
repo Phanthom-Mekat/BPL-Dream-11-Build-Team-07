@@ -5,6 +5,7 @@ import Players from './components/players/Players'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Newslatter from './components/newslatter/Newslatter';
+import Footer from './components/footer/Footer';
 function App() {
 
   const [coins, setCoin] = useState(0)
@@ -114,6 +115,7 @@ function App() {
         <Navbar coins={coins} addCoin={addCoin} />
         <Players playerChosen={playerChosen} deletePlayer={deletePlayer} chosenPlayerHandler={chosenPlayerHandler} choosePlayer={choosePlayer} handleIsActive={handleIsActive} isActive={isActive}/>
         <Newslatter/>
+        <Footer/>
         <ToastContainer />
     </>
   )
