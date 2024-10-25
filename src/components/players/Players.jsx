@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Player from "./Player";
 import PropTypes from "prop-types";
 import SelectedPlayers from "./SelectedPlayers";
-const Players = ({handleIsActive, isActive,choosePlayer,playerChosen,chosenPlayerHandler}) => {
+const Players = ({handleIsActive, isActive,choosePlayer,playerChosen,chosenPlayerHandler,deletePlayer}) => {
     const [players, setPlayers] = useState([])
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const Players = ({handleIsActive, isActive,choosePlayer,playerChosen,chosenPlaye
         <main className="w-11/12 mx-auto mt-20">
             <section>
                 <div className="flex justify-between items-center">
-                    <p className="text-2xl font-semibold">Available Players</p>
+                    <div></div>
                     <div className="border rounded-2xl">
                         <button 
                         onClick={() => handleIsActive('available')}
@@ -27,7 +27,7 @@ const Players = ({handleIsActive, isActive,choosePlayer,playerChosen,chosenPlaye
             </section>
 
         <section>
-            {isActive.available?<Player choosePlayer={choosePlayer} chosenPlayerHandler={chosenPlayerHandler} players={players} />:<SelectedPlayers players={players} playerChosen={playerChosen} />}
+            {isActive.available?<Player choosePlayer={choosePlayer} chosenPlayerHandler={chosenPlayerHandler} players={players} />:<SelectedPlayers players={players} playerChosen={playerChosen} deletePlayer={deletePlayer} handleIsActive={handleIsActive}  />}
         </section>
         
         </main>
@@ -39,7 +39,8 @@ Players.propTypes = {
     isActive: PropTypes.object,
     choosePlayer: PropTypes.func,
     playerChosen: PropTypes.array,
-    chosenPlayerHandler: PropTypes.func
+    chosenPlayerHandler: PropTypes.func,
+    deletePlayer: PropTypes.func
 }
 
 export default Players; 

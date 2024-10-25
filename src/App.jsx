@@ -29,7 +29,12 @@ function App() {
       setPlayerChosen([...playerChosen, player]);
     }
   };
+  // there is a delete button in the playerchoosen component if the button clicked it will be deleted make a handle for it
+  const deletePlayer = (player) => {
+    setPlayerChosen(playerChosen.filter((p) => p.playerId !== player.playerId));
+  };
   
+
 
   const [isActive, setIsActive] = useState({available: true, status: "available"});
   const handleIsActive = (status) => {
@@ -41,10 +46,11 @@ function App() {
     }
   }
   console.log(isActive)
+
   return (
     <>
         <Navbar coins={coins} addCoin={addCoin} />
-        <Players playerChosen={playerChosen} chosenPlayerHandler={chosenPlayerHandler} choosePlayer={choosePlayer} handleIsActive={handleIsActive} isActive={isActive}/>
+        <Players playerChosen={playerChosen} deletePlayer={deletePlayer} chosenPlayerHandler={chosenPlayerHandler} choosePlayer={choosePlayer} handleIsActive={handleIsActive} isActive={isActive}/>
     </>
   )
 }

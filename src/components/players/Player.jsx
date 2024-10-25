@@ -3,6 +3,8 @@ import { FaFlag } from "react-icons/fa";
 import PropTypes from "prop-types";
 const Player = ({players,choosePlayer,chosenPlayerHandler}) => {
     return (
+        <section>
+            <h1 className="text-2xl font-semibold">Available Players</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10 " >
         {
             players.map(player => 
@@ -40,6 +42,8 @@ const Player = ({players,choosePlayer,chosenPlayerHandler}) => {
            )
         }
     </div>
+        </section>
+
     );
 };
 Player.propTypes = {
