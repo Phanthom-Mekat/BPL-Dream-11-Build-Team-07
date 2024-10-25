@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Player from "./Player";
 import PropTypes from "prop-types";
 import SelectedPlayers from "./SelectedPlayers";
-const Players = ({handleIsActive, isActive}) => {
+const Players = ({handleIsActive, isActive,choosePlayer,playerChosen,chosenPlayerHandler}) => {
     const [players, setPlayers] = useState([])
 
     useEffect(() => {
@@ -21,13 +21,13 @@ const Players = ({handleIsActive, isActive}) => {
                         onClick={() => handleIsActive('available')}
                         className={`${isActive.available ? 'btn btn-ghost bg-[#E7FE29] ' : 'btn btn-ghost'}`}>Available</button>
                         <button
-                        onClick={() => handleIsActive('selected')} className={`${isActive.available ? 'btn btn-ghost  ' : 'btn btn-ghost bg-[#E7FE29]'}`}>Selected</button>
+                        onClick={() => handleIsActive('selected')} className={`${isActive.available ? 'btn btn-ghost  ' : 'btn btn-ghost bg-[#E7FE29]'}`}>Selected {playerChosen.length}/6</button>
                     </div>
                 </div>
             </section>
 
         <section>
-            {isActive.available?<Player players={players} />:<SelectedPlayers players={players}/>}
+            {isActive.available?<Player choosePlayer={choosePlayer} chosenPlayerHandler={chosenPlayerHandler} players={players} />:<SelectedPlayers players={players} playerChosen={playerChosen} />}
         </section>
         
         </main>
@@ -36,7 +36,10 @@ const Players = ({handleIsActive, isActive}) => {
 
 Players.propTypes = {
     handleIsActive: PropTypes.func,
-    isActive: PropTypes.object
+    isActive: PropTypes.object,
+    choosePlayer: PropTypes.func,
+    playerChosen: PropTypes.array,
+    chosenPlayerHandler: PropTypes.func
 }
 
 export default Players; 

@@ -1,7 +1,7 @@
 import { IoPerson } from "react-icons/io5";
 import { FaFlag } from "react-icons/fa";
 import PropTypes from "prop-types";
-const Player = ({players}) => {
+const Player = ({players,choosePlayer,chosenPlayerHandler}) => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10 " >
         {
@@ -28,19 +28,23 @@ const Player = ({players}) => {
                         </div>
 
                         <div className="flex justify-between">
-                            <h3 className="flex items-center text-xs gap-2 font-semibold">Price:{player.biddingPrice}</h3>
-                            <button 
+                            <h3 className="flex items-center text-xs gap-2 font-semibold">Price:${player.biddingPrice}</h3>
+                            <button onClick={() => {choosePlayer(parseInt(player.biddingPrice));
+                            chosenPlayerHandler(player);
+                            }}
                             className="btn btn-sm">Choose Player</button>
                         </div>
                     </div>
                 </div>
-                
+    
            )
         }
     </div>
     );
 };
 Player.propTypes = {
-    players: PropTypes.array
+    players: PropTypes.array,
+    choosePlayer: PropTypes.func,
+    chosenPlayerHandler: PropTypes.func
 }
 export default Player;
