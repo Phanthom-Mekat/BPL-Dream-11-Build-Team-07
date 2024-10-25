@@ -16,7 +16,7 @@ const Players = ({handleIsActive, isActive,choosePlayer,playerChosen,chosenPlaye
             <section>
                 <div className="flex justify-between items-center">
                     <div></div>
-                    <div className="border rounded-2xl">
+                    <div className="border rounded-2xl mb-2">
                         <button 
                         onClick={() => handleIsActive('available')}
                         className={`${isActive.available ? 'btn btn-ghost bg-[#E7FE29] ' : 'btn btn-ghost'}`}>Available</button>

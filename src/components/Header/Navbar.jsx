@@ -13,11 +13,11 @@ const Navbar = ({coins, addCoin}) => {
             <div>
                 <img src={logo} alt="" />            
             </div>
-            <div className='flex gap-10 items-center'>
-                <p className='text-gray-500 '>Home</p>
-                <p className='text-gray-500 '>Fixture</p>
-                <p className='text-gray-500 '>Teams</p>
-                <p className='text-gray-500 '>Schedules</p>
+            <div className='md:flex gap-10 items-center'>
+                <p className='text-gray-500 hidden md:block '>Home</p>
+                <p className='text-gray-500 hidden md:block  '>Fixture</p>
+                <p className='text-gray-500 hidden md:block '>Teams</p>
+                <p className='text-gray-500 hidden md:block '>Schedules</p>
                 <div className='flex gap-1 border p-2 rounded-md items-center  '>
                     <p className='font-semibold '>{coins} coin</p>
                     <img className='w-5 h-5' src={coin} alt="" />
@@ -33,7 +33,7 @@ const Navbar = ({coins, addCoin}) => {
             <div className="hero-content text-white text-center">
               <div className=" flex flex-col space-y-6 items-center justify-center">
                 <img className='' src={banner} alt="" />
-                <h1 className="mb-5 text-5xl font-bold">Assemble Your Ultimate Dream 11 Cricket Team</h1>
+                <h1 className="mb-5 text-2xl md:text-5xl font-bold">Assemble Your Ultimate Dream 11 Cricket Team</h1>
                 <p className="mb-5 text-gray-300 font-semibold text-xl ">
                 Beyond Boundaries Beyond Limits
                 </p>

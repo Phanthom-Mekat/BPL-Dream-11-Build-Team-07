@@ -7,7 +7,7 @@ const Footer = () => {
                 <div className='flex justify-center'>
                     <img src={footerImage} alt="" />    
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="md:flex justify-between items-center space-y-5">
                 <nav>
                     <h6 className="footer-title">About Us</h6>
                     <p>We are a passionate team dedicated <br /> to providing the best services to our customers.</p>
@@ -23,13 +23,13 @@ const Footer = () => {
                     <h6 className="footer-title">Subscribe</h6>
                     <fieldset className="form-control w-80">
                     <label className="label">
-                        <span className="">Subscribe to our newsletter for the latest updates.</span>
+                        <span className="">Subscribe to our newsletter <br /> for the latest updates.</span>
                     </label>
                     <div className="join">
                         <input
                         type="text"
                         placeholder="Enter your email"
-                        className="input input-bordered join-item" />
+                        className="w-32 md:w-full input input-bordered join-item" />
                         <button className='px-6 py-2 text-white rounded-r-md bg-gradient-to-r from-[#fed8b1] to-[#fda65d]'>Subscribe</button>
                     </div>
                     </fieldset>

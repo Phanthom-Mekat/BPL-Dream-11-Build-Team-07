@@ -11,7 +11,7 @@ const Newslatter = () => {
                         <input
                         type="text"
                         placeholder="Enter your email address"
-                        className="input input-bordered join-item" required />
+                        className="input input-bordered join-item w-36 md:w-full" required />
                         <button className='px-6 py-2 text-white rounded-r-md bg-gradient-to-r from-[#fed8b1] to-[#fda65d]'>Subscribe</button>
                     </div>
                     </fieldset>

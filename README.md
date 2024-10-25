@@ -1,8 +1,20 @@
-# React + Vite
+# BPL-DREAM 11
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description:
+BPL-DREAM 11 is a web application where users can create their own cricket team and manage their players. The application is built with React, JavaScript, HTML, CSS, Tailwind, DaisyUI. The application is fully responsive and has a user-friendly interface.
 
-Currently, two official plugins are available:
+## Technologies Used:
+- React
+- JavaScript
+- HTML
+- CSS
+- Tailwind
+- DaisyUI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features:
+1. User can create their own cricket team.
+2. User can manage their players.
+3. User can view the details of their players.
+
+## Live Link:
+https://bpl-dream-team-11.netlify.app/
