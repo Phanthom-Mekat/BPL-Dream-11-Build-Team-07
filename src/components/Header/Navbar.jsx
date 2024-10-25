@@ -1,9 +1,8 @@
 import logo from '../../assets/logo.png'
 import coin from '../../assets/coin.png'
 import banner from '../../assets/banner-main.png'
-import hero from '../../assets/bg-shadow.png'
 import PropTypes from 'prop-types';
-
+import './navbar.css'
 
 const Navbar = ({coins, addCoin}) => {
     
@@ -28,11 +27,8 @@ const Navbar = ({coins, addCoin}) => {
 
         <section className='mt-4'>
 
-        <div
-            className="hero h-[85vh]   rounded-xl overflow-hidden"
-            style={{
-              backgroundImage: `url(${hero})`,
-            }}>
+        <div className="hero h-[85vh]   rounded-xl overflow-hidden custom-gradient2"
+           >
             <div className="hero-overlay  bg-opacity-50"></div>
             <div className="hero-content text-white text-center">
               <div className=" flex flex-col space-y-6 items-center justify-center">
