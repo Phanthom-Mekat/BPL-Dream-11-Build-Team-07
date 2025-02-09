@@ -12,7 +12,7 @@ const Footer = () => {
                     <h6 className="footer-title">About Us</h6>
                     <p>We are a passionate team dedicated <br /> to providing the best services to our customers.</p>
                 </nav>
-                <nav>
+                <nav className='flex md:flex-col gap-2'>
                     <h6 className="footer-title">Quick Links</h6>
                     <a className="link link-hover ">Home</a>
                     <a className="link link-hover">Service</a>
